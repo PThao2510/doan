@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-xl-9 mx-auto">
+      <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+        <div class="card-img-left d-none d-md-flex">
+          <!-- Background image for card set in CSS! -->
+        </div>
+        <div class="card-body p-4 p-sm-5">
+          <h5 class="card-title text-center mb-5 fw-light fs-5">Đăng nhập</h5>
+          <form method="post" action="/users/sigin">
+
+            <div class="form-floating mb-3">
+              <label for="email">email</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Nhập địa chỉ email" required autofocus>
+            </div>
+            <div class="form-floating mb-3">
+              <label for="password">Mật khẩu</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+            </div>
+            <div class="d-grid mb-2">
+              <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">Đăng nhập</button>
+            </div>
+
+            <a class="d-block text-center mt-2 small" href="/users/signup">Đăng kí</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

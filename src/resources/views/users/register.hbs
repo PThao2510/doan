@@ -1,59 +1,21 @@
-<div class="container">
-        <div class="row">
-          <div class="col-lg-10 col-xl-9 mx-auto">
-            <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
-              <div class="card-img-left d-none d-md-flex">
-                <!-- Background image for card set in CSS! -->
-              </div>
-              <div class="card-body p-4 p-sm-5">
-                <h5 class="card-title text-center mb-5 fw-light fs-5">Đăng ký</h5>
-                <form>
-    
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInputUsername" placeholder="Tên đăng nhập" required autofocus>
-                    <label for="floatingInputUsername">Tên đăng nhập*</label>
-                  </div>
-    
-                  <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com">
-                    <label for="floatingInputEmail">Email*</label>
-                  </div>
-    
-                  <hr>
-    
-                  <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Mật khẩu*</label>
-                  </div>
-    
-                  <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPasswordConfirm" placeholder="Confirm Password">
-                    <label for="floatingPasswordConfirm">Xác nhận mật khẩu*</label>
-                  </div>
-    
-                  <div class="d-grid mb-2">
-                    <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">Đăng ký</button>
-                  </div>
-    
-                  <a class="d-block text-center mt-2 small" href="#">Đã đăng ký? Đăng nhập ngay</a>
-    
-                  <hr class="my-4">
-    
-                  <div class="d-grid mb-2">
-                    <button class="btn btn-lg btn-google btn-login fw-bold text-uppercase" type="submit">
-                      <i class="fab fa-google me-2"></i> Đăng ký với tài khoản Google
-                    </button>
-                  </div>
-    
-                  <div class="d-grid">
-                    <button class="btn btn-lg btn-facebook btn-login fw-bold text-uppercase" type="submit">
-                      <i class="fab fa-facebook-f me-2"></i> Đăng ký với tài khoản Facebook
-                    </button>
-                  </div>
-    
-                </form>
-              </div>
-            </div>
-          </div>
+
+<div class="mt-4">
+    <h3>Đăng kí</h3>
+
+    <form method="POST" action="/users/signup">
+        <div class="form-group">
+            <label for="email">Tên khóa học</label>
+            <input type="text" class="form-control" id="email" name="email">            
         </div>
-      </div>
+
+         <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password">            
+        </div>
+
+        
+        <button type="submit" class="btn btn-primary">Đăng kí</button>
+        <a class="d-block text-center mt-2 small" href="/users/sigin">Đã đăng ký? Đăng nhập ngay</a>
+
+    </form>
+</div>

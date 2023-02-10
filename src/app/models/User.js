@@ -1,20 +1,22 @@
 const mongoose = require('mongoose');
 const slug = require('mongoose-slug-generator');
 const mongooseDelete = require('mongoose-delete');
+const bcrypt = require('bcrypt');
 
 const Schema = mongoose.Schema;
 const User = new Schema({
-    account: {type: String, require: true,},
-    passWord: {type: String, require:true,},
-    level: { type: String},
-  slug: { type: String, slug: 'name', unique: true },
+    email: {type: String, require: true,},
+    password: {type: String, require:true,},
 }, {
     timestamps: true,
     
   });
-  mongoose.plugin(slug);
-User.plugin(mongooseDelete, { 
-  deletedAt: true,
-  overrideMethods: 'all' }); 
+
+User.methods.encryptPassword = function(password) {
+  return bcrypt.hashSync(password, bcrypt.genSaltSync(5), null);
+};
+User.methods.validPassword = function(password) {
+  return bcrypt.compareSync(password, this.password);
+}
 
 module.exports = mongoose.model('User', User);

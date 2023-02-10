@@ -3,9 +3,12 @@ const express = require('express')
 const morgan = require('morgan');
 const methodOverride = require('method-override')
 const { engine } = require ('express-handlebars');
-
+const session = require('express-session');
+const passport = require('passport');
+const flash = require('connect-flash');
 const route = require('./routes');
 const db = require('./config/db');
+require('./config/Passport/passport'); // pass passport for configuration
 
 //connect to DB
 db.connect();
@@ -21,6 +24,17 @@ app.use(express.urlencoded({
 app.use(express.json());
 
 app.use(methodOverride('_method'));
+
+app.use(session({
+  secret: 'adsa897adsa98bs',
+  resave: false,
+  saveUninitialized: false,
+}));
+
+app.use(passport.initialize())
+app.use(passport.session());
+app.use(flash());
+// require('./config/Passport/passport')(passport);
 
 //HTTP logger
 //app.use(morgan('combined'));

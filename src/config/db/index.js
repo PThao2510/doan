@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 async function connect() {
 
     try{
-        await mongoose.connect('mongodb://127.0.0.1/mini_cake_dev');
+        await mongoose.connect('mongodb://localhost:27017/f8_education_dev');
+        // require('../Passport/passport')(passport);
 
         mongoose.set("strictQuery", false);
         console.log('Connected')
